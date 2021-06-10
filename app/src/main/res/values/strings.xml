@@ -1,3 +1,59 @@
 <resources>
     <string name="app_name">Quiz</string>
+
+    <string name="question1">
+        Какой город из нижеперечисленного является столицей Таджикистана?
+    </string>
+    <string name="answer11">Берлин</string>
+    <string name="answer12">Астана</string>
+    <string name="answer13">Ташкент</string>
+    <string name="answer14">Душанбе</string>
+    <string name="answer15">Бишкек</string>
+
+    <string name="question2">
+        2 + 2 = ?
+    </string>
+    <string name="answer21">3</string>
+    <string name="answer22">1</string>
+    <string name="answer23">4</string>
+    <string name="answer24">5</string>
+    <string name="answer25">8</string>
+
+    <string name="question3">
+        Какое понятие исплользуется для обозначения того, что студент собирается
+        в кратчайший срок закрыть все долги по учебе в университете перед сессией?
+    </string>
+    <string name="answer31">зачет</string>
+    <string name="answer32">полет</string>
+    <string name="answer33">спидран</string>
+    <string name="answer34">блицкриг</string>
+    <string name="answer35">пробежка</string>
+
+    <string name="question4">
+        Язык программирования Java назван в честь чего?
+    </string>
+    <string name="answer41">Острова</string>
+    <string name="answer42">Мотоцикла</string>
+    <string name="answer43">Кофе</string>
+    <string name="answer44">Верны первые три варианта</string>
+    <string name="answer45">Верны первый и третий варианты</string>
+
+    <string name="question5">
+        Какие из сортов пива НЕ является баварским?
+    </string>
+    <string name="answer51">То что не немецкое</string>
+    <string name="answer52">Хелл</string>
+    <string name="answer53">Келлербир</string>
+    <string name="answer54">Вайсбир</string>
+    <string name="answer55">Жигулевское</string>
+
+    <string name="rightAnswer1">Душанбе</string>
+    <string name="rightAnswer2">4</string>
+    <string name="rightAnswer3">спидран</string>
+    <string name="rightAnswer4">Верны первый и третий варианты</string>
+    <string name="rightAnswer5">Жигулевское</string>
+
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+    <string name="submit">Submit</string>
 </resources>
