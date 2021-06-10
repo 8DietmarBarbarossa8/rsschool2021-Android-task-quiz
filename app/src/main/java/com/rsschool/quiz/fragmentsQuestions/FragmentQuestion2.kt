@@ -7,42 +7,34 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.rsschool.quiz.ITransitFragment
 import com.rsschool.quiz.R
-import com.rsschool.quiz.databinding.FragmentQuestion1Binding
+import com.rsschool.quiz.databinding.FragmentQuestion2Binding
 
-class FragmentQuestion1 : Fragment() {
-    // there variables needs for using comfort thing as binding!
-    private var _binding: FragmentQuestion1Binding? = null
+class FragmentQuestion2 : Fragment() {
+    private var _binding: FragmentQuestion2Binding? = null
     private val binding get() = _binding!!
-    // this variable using for getting access to click NEXT button!
     private var isMayNext = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentQuestion1Binding.inflate(inflater, container, false)
+    ): View? {
+        _binding = FragmentQuestion2Binding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // initializing
         val answersArray = arguments?.getIntArray(ARRAY_ANSWER_KEY) ?: IntArray(1)
         var position = arguments?.getInt(POSITION_KEY) ?: 0
         val radioButtonsIDTextAnswersArray = arrayOf(
-            binding.radioButton1 to R.string.answer11,
-            binding.radioButton2 to R.string.answer12,
-            binding.radioButton3 to R.string.answer13,
-            binding.radioButton4 to R.string.answer14,
-            binding.radioButton5 to R.string.answer15
+            binding.radioButton1 to R.string.answer21,
+            binding.radioButton2 to R.string.answer22,
+            binding.radioButton3 to R.string.answer23,
+            binding.radioButton4 to R.string.answer24,
+            binding.radioButton5 to R.string.answer25
         )
 
-        // PREVIOUS button become NOT active!
-        binding.previousButton.setBackgroundColor(binding.previousButton
-            .context.resources.getColor(R.color.notAction))
-
-        // check last radiobutton click, if it was
         if (answersArray[position] != 0){
             for (element in radioButtonsIDTextAnswersArray)
                 if (element.second == answersArray[position]) {
@@ -52,7 +44,6 @@ class FragmentQuestion1 : Fragment() {
                 }
         } else changeNextButtonClickActivity(false)
 
-        // listen to events
         binding.radioGroup.setOnCheckedChangeListener { _, checkedId ->
             for (element in radioButtonsIDTextAnswersArray)
                 if (checkedId == element.first.id)
@@ -62,10 +53,15 @@ class FragmentQuestion1 : Fragment() {
             changeNextButtonClickActivity(isMayNext)
         }
 
+        binding.previousButton.setOnClickListener {
+            (activity as ITransitFragment)
+                .transitFragment(FragmentQuestion1.newInstance(answersArray, --position))
+        }
+
         binding.nextButton.setOnClickListener {
-            if (isMayNext)
-                (activity as ITransitFragment)
-                    .transitFragment(FragmentQuestion2.newInstance(answersArray, ++position))
+//            if (isMayNext)
+//                (activity as ITransitFragment)
+//                    .transitFragment(FragmentQuestion3.newInstance(answersArray, ++position))
         }
     }
 
@@ -74,15 +70,14 @@ class FragmentQuestion1 : Fragment() {
             .context.resources.getColor(if (isClickable) R.color.colorQ1 else R.color.notAction))
 
     override fun onDestroyView() {
-        // nulling a variable (_binding)!!!
         _binding = null
         super.onDestroyView()
     }
 
     companion object {
         @JvmStatic
-        fun newInstance(answersArray: IntArray, positionQuestion: Int): FragmentQuestion1 =
-            FragmentQuestion1().apply {
+        fun newInstance(answersArray: IntArray, positionQuestion: Int): FragmentQuestion2 =
+            FragmentQuestion2().apply {
                 arguments = Bundle().apply {
                     putIntArray(ARRAY_ANSWER_KEY, answersArray)
                     putInt(POSITION_KEY, positionQuestion)

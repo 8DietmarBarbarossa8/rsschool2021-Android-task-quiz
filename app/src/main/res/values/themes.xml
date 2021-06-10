@@ -23,5 +23,6 @@
         <item name="colorSecondaryVariant">@color/yellow_100_light</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/yellow_100_dark</item>
+        <item name="windowNoTitle">true</item>
     </style>
 </resources>
