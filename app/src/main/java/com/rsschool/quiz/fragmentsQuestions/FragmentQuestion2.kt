@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.rsschool.quiz.ITransitFragment
 import com.rsschool.quiz.R
@@ -24,6 +25,7 @@ class FragmentQuestion2 : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setStatusBarColor()
 
         val answersArray = arguments?.getIntArray(ARRAY_ANSWER_KEY) ?: IntArray(1)
         var position = arguments?.getInt(POSITION_KEY) ?: 0
@@ -53,25 +55,38 @@ class FragmentQuestion2 : Fragment() {
             changeNextButtonClickActivity(isMayNext)
         }
 
+        // click PREVIOUS button!
         binding.previousButton.setOnClickListener {
             (activity as ITransitFragment)
                 .transitFragment(FragmentQuestion1.newInstance(answersArray, --position))
         }
 
+        // The same as PREVIOUS button!
+        binding.questionToolBar.setNavigationOnClickListener {
+            (activity as ITransitFragment)
+                .transitFragment(FragmentQuestion1.newInstance(answersArray, --position))
+        }
+
         binding.nextButton.setOnClickListener {
-//            if (isMayNext)
-//                (activity as ITransitFragment)
-//                    .transitFragment(FragmentQuestion3.newInstance(answersArray, ++position))
+            if (isMayNext)
+                (activity as ITransitFragment)
+                    .transitFragment(FragmentQuestion3.newInstance(answersArray, ++position))
         }
     }
 
     private fun changeNextButtonClickActivity(isClickable: Boolean) =
         binding.nextButton.setBackgroundColor(binding.nextButton
-            .context.resources.getColor(if (isClickable) R.color.colorQ1 else R.color.notAction))
+            .context.resources.getColor(if (isClickable) R.color.colorQ2 else R.color.notAction))
 
     override fun onDestroyView() {
         _binding = null
         super.onDestroyView()
+    }
+
+    private fun setStatusBarColor(){
+        val window = activity?.window
+        window?.statusBarColor =
+            ResourcesCompat.getColor(resources, R.color.colorQ2_Dark, null)
     }
 
     companion object {

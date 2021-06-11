@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.rsschool.quiz.ITransitFragment
 import com.rsschool.quiz.R
@@ -26,6 +27,7 @@ class FragmentQuestion1 : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setStatusBarColor()
 
         // initializing
         val answersArray = arguments?.getIntArray(ARRAY_ANSWER_KEY) ?: IntArray(1)
@@ -77,6 +79,12 @@ class FragmentQuestion1 : Fragment() {
         // nulling a variable (_binding)!!!
         _binding = null
         super.onDestroyView()
+    }
+
+    private fun setStatusBarColor(){
+        val window = activity?.window
+        window?.statusBarColor =
+            ResourcesCompat.getColor(resources, R.color.colorQ1_Dark, null)
     }
 
     companion object {

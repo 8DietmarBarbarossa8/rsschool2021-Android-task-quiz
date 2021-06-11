@@ -24,5 +24,11 @@
     <color name="colorQ4">#8BC34A</color>
     <color name="colorQ5">#FFEB3B</color>
 
+    <color name="colorQ1_Dark">#018697</color>
+    <color name="colorQ2_Dark">#BD352B</color>
+    <color name="colorQ3_Dark">#472880</color>
+    <color name="colorQ4_Dark">#587A2F</color>
+    <color name="colorQ5_Dark">#AC9E29</color>
+
     <color name="notAction">#5A5A5A</color>
 </resources>
