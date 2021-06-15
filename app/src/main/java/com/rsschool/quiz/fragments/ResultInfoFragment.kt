@@ -1,12 +1,15 @@
-package com.rsschool.quiz
+package com.rsschool.quiz.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
+import androidx.fragment.app.Fragment
+import com.rsschool.quiz.ITransitFragment
+import com.rsschool.quiz.objects.QuestionsAndAnswersObject
+import com.rsschool.quiz.R
 import com.rsschool.quiz.databinding.FragmentResultInfoBinding
 import kotlin.system.exitProcess
 
@@ -33,12 +36,12 @@ class ResultInfoFragment : Fragment() {
         binding.resultTV.text = messageTV
 
         binding.shareImageView.setOnClickListener {
-            val intent = Intent(Intent.ACTION_SEND)
-            intent.type = "text/plain"
-            intent.putExtra(Intent.EXTRA_TEXT, generateReportAnswers(messageTV, answersArray))
-            val chooserTitle = getString(R.string.chooser)
-            val chosenIntent = Intent.createChooser(intent, chooserTitle)
-            startActivity(chosenIntent)
+            startActivity(Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_SUBJECT, "Quiz results")
+                putExtra(Intent.EXTRA_TEXT, generateReportAnswers(messageTV, answersArray))
+                type = "text/plain"
+            })
         }
         binding.backImageView.setOnClickListener {
             (activity as ITransitFragment)

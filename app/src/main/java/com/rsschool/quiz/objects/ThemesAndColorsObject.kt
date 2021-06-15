@@ -1,4 +1,6 @@
-package com.rsschool.quiz
+package com.rsschool.quiz.objects
+
+import com.rsschool.quiz.R
 
 object ThemesAndColorsObject {
     val themes = arrayOf(

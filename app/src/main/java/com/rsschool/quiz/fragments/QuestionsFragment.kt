@@ -1,4 +1,4 @@
-package com.rsschool.quiz
+package com.rsschool.quiz.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,10 @@ import android.widget.RadioButton
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
+import com.rsschool.quiz.ITransitFragment
+import com.rsschool.quiz.objects.QuestionsAndAnswersObject
+import com.rsschool.quiz.R
+import com.rsschool.quiz.objects.ThemesAndColorsObject
 import com.rsschool.quiz.databinding.FragmentQuestionsBinding
 
 class QuestionsFragment : Fragment() {

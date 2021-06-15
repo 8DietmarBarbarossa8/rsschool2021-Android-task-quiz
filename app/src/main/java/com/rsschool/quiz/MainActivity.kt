@@ -3,13 +3,17 @@ package com.rsschool.quiz
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.rsschool.quiz.fragments.QuestionsFragment
+import com.rsschool.quiz.objects.QuestionsAndAnswersObject
+import com.rsschool.quiz.objects.ThemesAndColorsObject
 
 class MainActivity : AppCompatActivity(), ITransitFragment {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         if (checkSizeOnEqualling() != 0)
-            transitFragment(QuestionsFragment
+            transitFragment(
+                QuestionsFragment
                 .newInstance(IntArray(QuestionsAndAnswersObject.questions.size), 0))
     }
 
