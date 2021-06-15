@@ -1,4 +1,4 @@
-package com.rsschool.quiz.fragmentsQuestions
+package com.rsschool.quiz
 
 import android.content.Intent
 import android.os.Bundle

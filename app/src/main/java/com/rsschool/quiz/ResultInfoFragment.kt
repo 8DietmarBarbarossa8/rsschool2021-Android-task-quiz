@@ -1,25 +1,23 @@
-package com.rsschool.quiz.fragmentsQuestions
+package com.rsschool.quiz
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
-import androidx.fragment.app.Fragment
-import com.rsschool.quiz.ITransitFragment
-import com.rsschool.quiz.R
 import com.rsschool.quiz.databinding.FragmentResultInfoBinding
 import kotlin.system.exitProcess
 
-class FragmentResultInfo : Fragment() {
+class ResultInfoFragment : Fragment() {
     private var _binding: FragmentResultInfoBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentResultInfoBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -29,16 +27,10 @@ class FragmentResultInfo : Fragment() {
         setStatusBarColor()
 
         val answersArray = arguments?.getIntArray(ARRAY_ANSWER_KEY) ?: IntArray(1)
-        val rightAnswersArray = intArrayOf(
-            R.string.rightAnswer1,
-            R.string.rightAnswer2,
-            R.string.rightAnswer3,
-            R.string.rightAnswer4,
-            R.string.rightAnswer5
-        )
+        val rightAnswersArray = QuestionsAndAnswersObject.rightAnswers.toIntArray()
         val result = checkAnswers(answersArray, rightAnswersArray)
         val messageTV = getResult(result, rightAnswersArray.size)
-        binding.resultTextView.text = messageTV
+        binding.resultTV.text = messageTV
 
         binding.shareImageView.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND)
@@ -50,7 +42,7 @@ class FragmentResultInfo : Fragment() {
         }
         binding.backImageView.setOnClickListener {
             (activity as ITransitFragment)
-                .transitFragment(FragmentQuestion1.newInstance(IntArray(5), 0))
+                .transitFragment(QuestionsFragment.newInstance(IntArray(5), 0))
         }
         binding.exitImageView.setOnClickListener {
             exitProcess(0)
@@ -70,13 +62,7 @@ class FragmentResultInfo : Fragment() {
 
     private fun generateReportAnswers(messageResult: String, answerArray: IntArray): String {
         var text = "$messageResult\n"
-        val questionsArray = arrayOf(
-            R.string.question1,
-            R.string.question2,
-            R.string.question3,
-            R.string.question4,
-            R.string.question5
-        )
+        val questionsArray = QuestionsAndAnswersObject.questions
 
         for (i in questionsArray.indices)
             text += "\n${i + 1}) ${resources.getString(questionsArray[i])}" +
@@ -93,8 +79,8 @@ class FragmentResultInfo : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(answersArray: IntArray): FragmentResultInfo {
-            val fragment = FragmentResultInfo()
+        fun newInstance(answersArray: IntArray): ResultInfoFragment {
+            val fragment = ResultInfoFragment()
             val args = Bundle()
             args.putIntArray(ARRAY_ANSWER_KEY, answersArray)
             fragment.arguments = args

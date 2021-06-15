@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,7 +8,7 @@
     android:theme="@style/Theme.Quiz.Fifth">
 
     <TextView
-        android:id="@+id/resultTextView"
+        android:id="@+id/resultTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
@@ -32,7 +33,7 @@
         app:layout_constraintBottom_toTopOf="@+id/backImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/resultTV" />
 
     <ImageView
         android:id="@+id/backImageView"
