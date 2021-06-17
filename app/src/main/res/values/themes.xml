@@ -35,4 +35,34 @@
         <item name="colorPrimaryDark">@color/colorQ5</item>
         <item name="colorSecondary">@color/colorQ5</item>
     </style>
+
+    <style name="Theme.Quiz.Sixth" parent="Theme.Quiz">
+        <item name="colorPrimary">@color/colorQ6</item>
+        <item name="colorPrimaryDark">@color/colorQ6</item>
+        <item name="colorSecondary">@color/colorQ6</item>
+    </style>
+
+    <style name="Theme.Quiz.Seventh" parent="Theme.Quiz">
+        <item name="colorPrimary">@color/colorQ7</item>
+        <item name="colorPrimaryDark">@color/colorQ7</item>
+        <item name="colorSecondary">@color/colorQ7</item>
+    </style>
+
+    <style name="Theme.Quiz.Eighth" parent="Theme.Quiz">
+        <item name="colorPrimary">@color/colorQ8</item>
+        <item name="colorPrimaryDark">@color/colorQ8</item>
+        <item name="colorSecondary">@color/colorQ8</item>
+    </style>
+
+    <style name="Theme.Quiz.Ninth" parent="Theme.Quiz">
+        <item name="colorPrimary">@color/colorQ9</item>
+        <item name="colorPrimaryDark">@color/colorQ9</item>
+        <item name="colorSecondary">@color/colorQ9</item>
+    </style>
+
+    <style name="Theme.Quiz.Tenth" parent="Theme.Quiz">
+        <item name="colorPrimary">@color/colorQ10</item>
+        <item name="colorPrimaryDark">@color/colorQ10</item>
+        <item name="colorSecondary">@color/colorQ10</item>
+    </style>
 </resources>

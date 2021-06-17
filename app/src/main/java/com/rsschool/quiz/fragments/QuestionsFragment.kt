@@ -6,14 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RadioButton
-import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.rsschool.quiz.ITransitFragment
-import com.rsschool.quiz.objects.QuestionsAndAnswersObject
 import com.rsschool.quiz.R
-import com.rsschool.quiz.objects.ThemesAndColorsObject
 import com.rsschool.quiz.databinding.FragmentQuestionsBinding
+import com.rsschool.quiz.objects.QuestionsAndAnswersObject
+import com.rsschool.quiz.objects.ThemesAndColorsObject
 
 class QuestionsFragment : Fragment() {
     // there variables needs for using comfort thing as binding!
@@ -47,9 +46,9 @@ class QuestionsFragment : Fragment() {
             binding.radioButton5
         )
         val variants = Array(radioButtons.size){
-            radioButtons[it].text =
-                resources.getString(QuestionsAndAnswersObject.answers[position][it])
-            radioButtons[it] to QuestionsAndAnswersObject.answers[position][it]
+            radioButtons[it].text = resources.getString(
+                QuestionsAndAnswersObject.questionsAndAnswers[position].second[it])
+            radioButtons[it] to QuestionsAndAnswersObject.questionsAndAnswers[position].second[it]
         }
 
         // Set color and subtitle
@@ -85,19 +84,14 @@ class QuestionsFragment : Fragment() {
     }
 
     private fun setBarsSetting(){
-        val window = activity?.window
-        window?.statusBarColor =
-            ResourcesCompat.getColor(resources,
-                ThemesAndColorsObject.darkColors[position], null)
-
-        binding.questionToolBar.setBackgroundColor(
-            ContextCompat.getColor(requireContext(), ThemesAndColorsObject.mainColors[position]))
+        activity?.window?.statusBarColor = ResourcesCompat
+            .getColor(resources, ThemesAndColorsObject.darkColors[position], null)
     }
 
     private fun setQuestion(){
         binding.questionToolBar.subtitle = "Question: ${position + 1}"
         binding.questionTV.text = resources
-            .getString(QuestionsAndAnswersObject.questions[position])
+            .getString(QuestionsAndAnswersObject.questionsAndAnswers[position].first)
     }
 
     private fun changeButtonEnable(button: Button, isEnable: Boolean){

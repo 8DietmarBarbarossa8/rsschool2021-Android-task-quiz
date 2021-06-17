@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Quiz</string>
-
     <string name="previous">Previous</string>
     <string name="next">Next</string>
     <string name="submit">Submit</string>
+    <string name="subject">Quiz results</string>
 
     <string name="question1">
         What is the capital of Tajikistan?
@@ -50,4 +50,49 @@
     <string name="answer53">Weissbier</string>
     <string name="answer54">Kellerbier</string>
     <string name="answer55">Zhigulevskoe</string>
+
+    <string name="question6">
+        What the best way to access views?
+    </string>
+    <string name="answer61">ViewBinding</string>
+    <string name="answer62">DataBinding</string>
+    <string name="answer63">Kotlin Synthetic</string>
+    <string name="answer64">Butterknife</string>
+    <string name="answer65">findViewById</string>
+
+    <string name="question7">
+        In which country was born company "Peugeot"?
+    </string>
+    <string name="answer71">Germany</string>
+    <string name="answer72">France</string>
+    <string name="answer73">Japan</string>
+    <string name="answer74">Korea</string>
+    <string name="answer75">Russia</string>
+
+    <string name="question8">
+        What modern name of Persia?
+    </string>
+    <string name="answer81">Iran</string>
+    <string name="answer82">Ayran</string>
+    <string name="answer83">Iraq</string>
+    <string name="answer84">Tajikistan</string>
+    <string name="answer85">Afghanistan</string>
+
+    <string name="question9">
+        How many pairs chromosomes does a person have?
+    </string>
+    <string name="answer91">45</string>
+    <string name="answer92">46</string>
+    <string name="answer93">23</string>
+    <string name="answer94">49</string>
+    <string name="answer95">47</string>
+
+    <string name="question10">
+        What there languages is JVM (Dart, CoffeeScript, Ceylon, Perl, APL)?
+    </string>
+    <string name="answer101">Dart</string>
+    <string name="answer102">CoffeeScript</string>
+    <string name="answer103">Ceylon</string>
+    <string name="answer104">Perl</string>
+    <string name="answer105">APL</string>
 </resources>

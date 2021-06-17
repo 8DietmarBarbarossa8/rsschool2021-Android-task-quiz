@@ -18,17 +18,25 @@
     <color name="deep_purple_100_light">#fff7ff</color>
     <color name="deep_purple_100_dark">#a094b7</color>
 
-    <color name="colorQ1">#00BCD4</color>
-    <color name="colorQ2">#F44336</color>
-    <color name="colorQ3">#673AB7</color>
-    <color name="colorQ4">#8BC34A</color>
-    <color name="colorQ5">#FFEB3B</color>
+    <color name="colorQ1">#F44336</color>
+    <color name="colorQ2">#FF5722</color>
+    <color name="colorQ3">#FFEB3B</color>
+    <color name="colorQ4">#4CAF50</color>
+    <color name="colorQ5">#00BCD4</color>
+    <color name="colorQ6">#3F51B5</color>
+    <color name="colorQ7">#673AB7</color>
+    <color name="colorQ8">#F600FF</color>
+    <color name="colorQ9">#b2ebf2</color>
+    <color name="colorQ10">#dcedc8</color>
 
-    <color name="colorQ1_Dark">#018697</color>
-    <color name="colorQ2_Dark">#BD352B</color>
-    <color name="colorQ3_Dark">#472880</color>
-    <color name="colorQ4_Dark">#587A2F</color>
-    <color name="colorQ5_Dark">#AC9E29</color>
-
-    <color name="notAction">#5A5A5A</color>
+    <color name="colorQ1_Dark">#8C2720</color>
+    <color name="colorQ2_Dark">#913315</color>
+    <color name="colorQ3_Dark">#8E8322</color>
+    <color name="colorQ4_Dark">#265528</color>
+    <color name="colorQ5_Dark">#015D68</color>
+    <color name="colorQ6_Dark">#1F2859</color>
+    <color name="colorQ7_Dark">#382063</color>
+    <color name="colorQ8_Dark">#85018A</color>
+    <color name="colorQ9_Dark">#81b9bf</color>
+    <color name="colorQ10_Dark">#abb973</color>
 </resources>
