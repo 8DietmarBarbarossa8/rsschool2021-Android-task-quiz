@@ -5,17 +5,36 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.rsschool.quiz.fragments.QuestionsFragment
 import com.rsschool.quiz.objects.QuestionsAndAnswersObject
+import com.rsschool.quiz.objects.ThemesObject
 
 class MainActivity : AppCompatActivity(), ITransitFragment {
-    override val arrayParameter: IntArray
-        get() = IntArray(QuestionsAndAnswersObject.questionsAndAnswers.size)
-    override val position: Int
-        get() = 0
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        transitFragment(QuestionsFragment.newInstance(arrayParameter, position))
+
+        // Count of question == Count of screen!
+        val size = QuestionsAndAnswersObject.questionAndAnswers.size
+        // Check some conditions (described below)
+        if (isMayTransit())
+            transitFragment(QuestionsFragment.newInstance(IntArray(size), 0))
+    }
+
+    private fun isMayTransit(): Boolean {
+        /*
+        Every screen should to contain own:
+        1) question;
+        2) variants of answers (not less than 5);
+        3) theme.
+        Also, count of right answers should equal count of questions
+         */
+        val sizes = Triple(
+            QuestionsAndAnswersObject.questionAndAnswers.size,
+            QuestionsAndAnswersObject.rightAnswers.size,
+            ThemesObject.themes.size
+        )
+        return sizes.first == sizes.second
+                && sizes.second == sizes.third
+                && QuestionsAndAnswersObject.checkCountOfVariantsAnswers()
     }
 
     override fun transitFragment(fragment: Fragment) {

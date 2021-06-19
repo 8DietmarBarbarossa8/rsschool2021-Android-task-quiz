@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import com.rsschool.quiz.ITransitFragment
 import com.rsschool.quiz.R
@@ -15,7 +16,7 @@ import kotlin.system.exitProcess
 
 class ResultInfoFragment : Fragment() {
     private var _binding: FragmentResultInfoBinding? = null
-    private val binding get() = _binding!!
+    private val binding get() = requireNotNull(_binding)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,6 +54,11 @@ class ResultInfoFragment : Fragment() {
         }
     }
 
+    private fun setStatusBarColor(){
+        activity?.window?.statusBarColor =
+            ResourcesCompat.getColor(resources, R.color.deep_orange_100_dark, null)
+    }
+
     private fun checkAnswers(array: IntArray, rightArray: IntArray): Int {
         var countRightScore = 0
         for (i in array.indices)
@@ -66,29 +72,24 @@ class ResultInfoFragment : Fragment() {
 
     private fun generateReportAnswers(messageResult: String, answerArray: IntArray): String {
         var text = "$messageResult\n"
-        val questionsArray = QuestionsAndAnswersObject.questionsAndAnswers
-
+        val questionsArray = QuestionsAndAnswersObject.questionAndAnswers
         for (i in questionsArray.indices)
             text += "\n${i + 1}) ${resources.getString(questionsArray[i].first)}" +
                     "\nYour answer: ${resources.getString(answerArray[i])}\n"
-
         return text
     }
 
-    private fun setStatusBarColor(){
-        activity?.window?.statusBarColor =
-            ResourcesCompat.getColor(resources, R.color.deep_orange_100_dark, null)
+    override fun onDestroyView() {
+        _binding = null
+        super.onDestroyView()
     }
 
     companion object {
         @JvmStatic
-        fun newInstance(answersArray: IntArray): ResultInfoFragment {
-            val fragment = ResultInfoFragment()
-            val args = Bundle()
-            args.putIntArray(ARRAY_ANSWER_KEY, answersArray)
-            fragment.arguments = args
-            return fragment
-        }
+        fun newInstance(answersArray: IntArray): ResultInfoFragment =
+            ResultInfoFragment().apply {
+                arguments = bundleOf(ARRAY_ANSWER_KEY to answersArray)
+            }
 
         private const val ARRAY_ANSWER_KEY = "AA_KEY"
     }

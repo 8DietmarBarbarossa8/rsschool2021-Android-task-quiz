@@ -13,6 +13,8 @@
     <string name="answer13">Tashkent</string>
     <string name="answer14">Bishkek</string>
     <string name="answer15">Astana</string>
+    <string name="answer16">Ashgabat</string>
+    <string name="answer17">Cabul</string>
 
     <string name="question2">
         2 + 2 = ?
@@ -41,6 +43,7 @@
     <string name="answer43">1997</string>
     <string name="answer44">1996</string>
     <string name="answer45">1995</string>
+    <string name="answer46">1992</string>
 
     <string name="question5">
         Which beer is NOT Bavarian (Hell, Weissbier, Kellerbier and Zhigulevskoe)?
@@ -68,6 +71,7 @@
     <string name="answer73">Japan</string>
     <string name="answer74">Korea</string>
     <string name="answer75">Russia</string>
+    <string name="answer76">China</string>
 
     <string name="question8">
         What modern name of Persia?

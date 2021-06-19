@@ -3,13 +3,15 @@ package com.rsschool.quiz.objects
 import com.rsschool.quiz.R
 
 object QuestionsAndAnswersObject {
-    val questionsAndAnswers = arrayOf(
+    val questionAndAnswers = arrayOf(
         R.string.question1 to arrayOf(
             R.string.answer11,
             R.string.answer12,
             R.string.answer13,
             R.string.answer14,
-            R.string.answer15
+            R.string.answer15,
+            R.string.answer16,
+            R.string.answer17
         ),
         R.string.question2 to arrayOf(
             R.string.answer21,
@@ -30,7 +32,8 @@ object QuestionsAndAnswersObject {
             R.string.answer42,
             R.string.answer43,
             R.string.answer44,
-            R.string.answer45
+            R.string.answer45,
+            R.string.answer46
         ),
         R.string.question5 to arrayOf(
             R.string.answer51,
@@ -51,7 +54,8 @@ object QuestionsAndAnswersObject {
             R.string.answer72,
             R.string.answer73,
             R.string.answer74,
-            R.string.answer75
+            R.string.answer75,
+            R.string.answer76
         ),
         R.string.question8 to arrayOf(
             R.string.answer81,
@@ -88,4 +92,11 @@ object QuestionsAndAnswersObject {
         R.string.answer93,
         R.string.answer103
     )
+
+    fun checkCountOfVariantsAnswers(): Boolean {
+        for (i in questionAndAnswers.indices)
+            if (questionAndAnswers[i].second.size < 5)
+                return false
+        return true
+    }
 }

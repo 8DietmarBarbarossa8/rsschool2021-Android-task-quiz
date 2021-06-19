@@ -8,61 +8,62 @@
 
     <style name="Theme.Quiz.First" parent="Theme.Quiz">
         <item name="colorPrimary">@color/colorQ1</item>
-        <item name="colorPrimaryDark">@color/colorQ1</item>
+        <item name="colorPrimaryDark">@color/colorQ1_Dark</item>
         <item name="colorSecondary">@color/colorQ1</item>
+        <!-- Status bar color. -->
     </style>
 
     <style name="Theme.Quiz.Second" parent="Theme.Quiz">
         <item name="colorPrimary">@color/colorQ2</item>
-        <item name="colorPrimaryDark">@color/colorQ2</item>
+        <item name="colorPrimaryDark">@color/colorQ2_Dark</item>
         <item name="colorSecondary">@color/colorQ2</item>
     </style>
 
     <style name="Theme.Quiz.Third" parent="Theme.Quiz">
         <item name="colorPrimary">@color/colorQ3</item>
-        <item name="colorPrimaryDark">@color/colorQ3</item>
+        <item name="colorPrimaryDark">@color/colorQ3_Dark</item>
         <item name="colorSecondary">@color/colorQ3</item>
     </style>
 
     <style name="Theme.Quiz.Fourth" parent="Theme.Quiz">
         <item name="colorPrimary">@color/colorQ4</item>
-        <item name="colorPrimaryDark">@color/colorQ4</item>
+        <item name="colorPrimaryDark">@color/colorQ4_Dark</item>
         <item name="colorSecondary">@color/colorQ4</item>
     </style>
 
     <style name="Theme.Quiz.Fifth" parent="Theme.Quiz">
         <item name="colorPrimary">@color/colorQ5</item>
-        <item name="colorPrimaryDark">@color/colorQ5</item>
+        <item name="colorPrimaryDark">@color/colorQ5_Dark</item>
         <item name="colorSecondary">@color/colorQ5</item>
     </style>
 
     <style name="Theme.Quiz.Sixth" parent="Theme.Quiz">
         <item name="colorPrimary">@color/colorQ6</item>
-        <item name="colorPrimaryDark">@color/colorQ6</item>
+        <item name="colorPrimaryDark">@color/colorQ6_Dark</item>
         <item name="colorSecondary">@color/colorQ6</item>
     </style>
 
     <style name="Theme.Quiz.Seventh" parent="Theme.Quiz">
         <item name="colorPrimary">@color/colorQ7</item>
-        <item name="colorPrimaryDark">@color/colorQ7</item>
+        <item name="colorPrimaryDark">@color/colorQ7_Dark</item>
         <item name="colorSecondary">@color/colorQ7</item>
     </style>
 
     <style name="Theme.Quiz.Eighth" parent="Theme.Quiz">
         <item name="colorPrimary">@color/colorQ8</item>
-        <item name="colorPrimaryDark">@color/colorQ8</item>
+        <item name="colorPrimaryDark">@color/colorQ8_Dark</item>
         <item name="colorSecondary">@color/colorQ8</item>
     </style>
 
     <style name="Theme.Quiz.Ninth" parent="Theme.Quiz">
         <item name="colorPrimary">@color/colorQ9</item>
-        <item name="colorPrimaryDark">@color/colorQ9</item>
+        <item name="colorPrimaryDark">@color/colorQ9_Dark</item>
         <item name="colorSecondary">@color/colorQ9</item>
     </style>
 
     <style name="Theme.Quiz.Tenth" parent="Theme.Quiz">
         <item name="colorPrimary">@color/colorQ10</item>
-        <item name="colorPrimaryDark">@color/colorQ10</item>
+        <item name="colorPrimaryDark">@color/colorQ10_Dark</item>
         <item name="colorSecondary">@color/colorQ10</item>
     </style>
 </resources>
