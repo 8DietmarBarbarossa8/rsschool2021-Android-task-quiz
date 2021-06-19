@@ -18,8 +18,8 @@
     <color name="deep_purple_100_light">#fff7ff</color>
     <color name="deep_purple_100_dark">#a094b7</color>
 
-    <color name="colorQ1">#F44336</color>
-    <color name="colorQ2">#FF5722</color>
+    <color name="colorQ1">#FF1100</color>
+    <color name="colorQ2">#FD7348</color>
     <color name="colorQ3">#FFEB3B</color>
     <color name="colorQ4">#4CAF50</color>
     <color name="colorQ5">#00BCD4</color>
@@ -29,8 +29,8 @@
     <color name="colorQ9">#b2ebf2</color>
     <color name="colorQ10">#dcedc8</color>
 
-    <color name="colorQ1_Dark">#8C2720</color>
-    <color name="colorQ2_Dark">#913315</color>
+    <color name="colorQ1_Dark">#880900</color>
+    <color name="colorQ2_Dark">#9A472D</color>
     <color name="colorQ3_Dark">#8E8322</color>
     <color name="colorQ4_Dark">#265528</color>
     <color name="colorQ5_Dark">#015D68</color>

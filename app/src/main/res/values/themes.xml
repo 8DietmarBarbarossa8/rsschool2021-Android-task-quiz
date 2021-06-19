@@ -10,7 +10,6 @@
         <item name="colorPrimary">@color/colorQ1</item>
         <item name="colorPrimaryDark">@color/colorQ1_Dark</item>
         <item name="colorSecondary">@color/colorQ1</item>
-        <!-- Status bar color. -->
     </style>
 
     <style name="Theme.Quiz.Second" parent="Theme.Quiz">
