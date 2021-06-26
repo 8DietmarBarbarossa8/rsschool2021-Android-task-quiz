@@ -12,11 +12,14 @@ class MainActivity : AppCompatActivity(), ITransitFragment {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Count of question == Count of screen!
-        val size = QuestionsAndAnswersObject.questionAndAnswers.size
-        // Check some conditions (described below)
-        if (isMayTransit())
-            transitFragment(QuestionsFragment.newInstance(IntArray(size), 0))
+        // fix bag with changing system theme
+        if (savedInstanceState == null){
+            // Count of question == Count of screen!
+            val size = QuestionsAndAnswersObject.questionAndAnswers.size
+            // Check some conditions (described below)
+            if (isMayTransit())
+                transitFragment(QuestionsFragment.newInstance(IntArray(size), 0))
+        }
     }
 
     private fun isMayTransit(): Boolean {
