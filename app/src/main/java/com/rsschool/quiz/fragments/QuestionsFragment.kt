@@ -100,8 +100,8 @@ class QuestionsFragment : Fragment() {
     }
 
     private fun someChangeMapping(){
-        if (position != 0)
-            binding.questionToolBar.setNavigationIcon(R.drawable.ic_baseline_chevron_left_24)
+        if (position == 0)
+            binding.questionToolBar.navigationIcon = null
         if (position == answersArray.size - 1)
             binding.nextButton.text = resources.getString(R.string.submit)
     }
