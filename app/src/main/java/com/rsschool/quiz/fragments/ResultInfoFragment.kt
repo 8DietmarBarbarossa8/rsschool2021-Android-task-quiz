@@ -37,12 +37,12 @@ class ResultInfoFragment : Fragment() {
         binding.resultTV.text = messageTV
 
         binding.shareImageView.setOnClickListener {
-            startActivity(Intent().apply {
+            startActivity(Intent.createChooser(Intent().apply {
                 action = Intent.ACTION_SEND
                 putExtra(Intent.EXTRA_SUBJECT, resources.getString(R.string.subject))
                 putExtra(Intent.EXTRA_TEXT, generateReportAnswers(messageTV, answersArray))
                 type = "text/plain"
-            })
+            }, getString(R.string.chooser)))
         }
         binding.backImageView.setOnClickListener {
             (activity as ITransitFragment)
